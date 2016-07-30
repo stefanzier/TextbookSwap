@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Scene, Router } from 'react-native-router-flux';
 import {
   AppRegistry,
   StyleSheet,
@@ -6,18 +7,20 @@ import {
   View
 } from 'react-native';
 
-import Router, { Scene } from 'react-native-router-flux';
+// Components
+import Login from './components/user/login/login';
 
 class TextbookSwap extends Component {
   render() {
     return (
       <Router>
         <Scene key="root">
-          // scenes for main app go here 
+          <Scene key="login" component={Login} title="Login" hideNavBar={true}/>
         </Scene>
-      </Router> 
+      </Router>
     );
   }
 }
+
 
 AppRegistry.registerComponent('TextbookSwap', () => TextbookSwap);
