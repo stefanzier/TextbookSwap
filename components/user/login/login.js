@@ -127,10 +127,12 @@ export default class Login extends Component {
           alwaysBonceVertical={false}
         >
           <View style={styles.loginContainer}>
+
             <Image 
               source={require('TextbookSwap/assets/textbook.png')}
               style={styles.loginImage} 
             />
+
             <Text style={styles.headerText}>SCU TextbookSwap</Text>
 
             <View style={styles.inputContainer}>
@@ -138,17 +140,21 @@ export default class Login extends Component {
                 style={styles.formInput}
                 placeholder="Email"
               />
+
               <TextInput
                 style={styles.formInput}
                 secureTextEntry={true}
                 placeholder="Password"
               />
+
               <TouchableOpacity style={styles.loginButton}>
                 <Text style={styles.loginButtonText}>Log In</Text>
               </TouchableOpacity>
+
               <TouchableOpacity>
                 <Text style={styles.toSignupButton}>Dont have an account? Create one!</Text>
               </TouchableOpacity>
+              
             </View>
           </View>
 
