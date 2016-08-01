@@ -6,8 +6,12 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "firebase": "^3.2.1",
     "react": "15.2.1",
     "react-native": "0.30.0",
-    "react-native-router-flux": "^3.32.0"
+    "react-native-config": "0.0.7",
+    "react-native-keyboard-aware-scroll-view": "^0.1.2",
+    "react-native-router-flux": "^3.32.0",
+    "react-redux": "^4.4.5"
   }
 }
