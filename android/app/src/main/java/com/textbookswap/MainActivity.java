@@ -1,7 +1,6 @@
 package com.textbookswap;
 
 import com.facebook.react.ReactActivity;
-import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 
 public class MainActivity extends ReactActivity {
 

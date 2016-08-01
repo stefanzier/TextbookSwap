@@ -204,16 +204,22 @@ export default class Login extends Component {
     let email = this.state.email;
     let password = this.state.password;
 
-    console.log(email);
-    console.log(password);
-
     auth.signInWithEmailAndPassword(email, password)
       .then(Actions.home)
       .catch((error) => {
-        AlertIOS.alert(
-          `${error.code}`,
-          `${error.message}`
-        );
+        switch(error.code) {
+          case "auth/wrong-password":
+            AlertIOS.alert('Uh oh!', 'Invalid password! Please try again.');
+          break;
+
+          case "auth/invalid-email":
+            AlertIOS.alert('Uh oh!', 'Invalid email! Please try again.'); 
+          break;
+
+          case "auth/user-not-found":
+            AlertIOS.alert('Uh oh!', 'Please check your credentials and try again');
+          break;
+        }
       });
   }
 }
