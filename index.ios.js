@@ -41,7 +41,7 @@ class TextbookSwap extends Component {
             <Scene key="login" component={Login} initial={true}/>
           </Scene>
           <Scene key="appScenes" hideNavBar={false} navigationBarStyle={styles.navBarDefault} titleStyle={{ color: "white" }}>
-            <Scene key="home" component={Home} title="TextbookSwap" />
+            <Scene key="home" component={Home} title="TextbookSwap" initial={true} />
           </Scene>
         </Scene>
       </Router>

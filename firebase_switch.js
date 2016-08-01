@@ -10,7 +10,7 @@ export default class FirebaseSwitch extends Component {
 
   componentWillMount() {
     firebaseApp.auth().onAuthStateChanged((user) => 
-      this.setState({ loggedIn: !user })
+      this.setState({ loggedIn: !!user })
     );
   }
 
