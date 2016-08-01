@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  AlertIOS,
   Dimensions,
   Image,
   ScrollView,
@@ -11,9 +12,15 @@ import {
 } from 'react-native';
 
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { Actions } from 'react-native-router-flux';
+
+import firebaseApp from 'TextbookSwap/firebase_setup';
 
 // Set width and height to screen dimensions
 const { width, height } = Dimensions.get("window"); 
+
+// For Firebase Auth
+const auth = firebaseApp.auth();
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -114,7 +121,20 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
   
-    this.state = {};
+    this.state = {
+      email: '',
+      password: ''
+    }
+  }
+
+  componentDidMount() {
+    let user = auth.currentUser;
+    if (user) {
+      console.log(msg)
+      Actions.home
+    } else {
+      return;
+    }
   }
 
   render() {
@@ -136,25 +156,37 @@ export default class Login extends Component {
             <Text style={styles.headerText}>SCU TextbookSwap</Text>
 
             <View style={styles.inputContainer}>
+
               <TextInput
                 style={styles.formInput}
                 placeholder="Email"
+                keyboardType="email-address"
+                autoFocus={true}
+                autoCorrect={false}
+                autoCapitalize="none"
+                onChangeText={(email) => this.setState({email})}
               />
 
               <TextInput
                 style={styles.formInput}
                 secureTextEntry={true}
                 placeholder="Password"
+                autoCorrect={false}
+                autoCapitalize="none"
+                onChangeText={(password) => this.setState({password})}
               />
 
-              <TouchableOpacity style={styles.loginButton}>
+              <TouchableOpacity 
+                style={styles.loginButton}
+                onPress={this._logInUser.bind(this)}
+              >
                 <Text style={styles.loginButtonText}>Log In</Text>
               </TouchableOpacity>
 
               <TouchableOpacity>
                 <Text style={styles.toSignupButton}>Dont have an account? Create one!</Text>
               </TouchableOpacity>
-              
+
             </View>
           </View>
 
@@ -166,5 +198,22 @@ export default class Login extends Component {
         </KeyboardAwareScrollView>
       </View>
     );
+  }
+
+  _logInUser() {
+    let email = this.state.email;
+    let password = this.state.password;
+
+    console.log(email);
+    console.log(password);
+
+    auth.signInWithEmailAndPassword(email, password)
+      .then(Actions.home)
+      .catch((error) => {
+        AlertIOS.alert(
+          `${error.code}`,
+          `${error.message}`
+        );
+      });
   }
 }
