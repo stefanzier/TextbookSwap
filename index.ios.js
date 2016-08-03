@@ -10,13 +10,14 @@ import firebaseApp from './firebase_setup';
 // Components
 import Login from './components/user/login/login';
 import Home from './components/user/home/home';
+import Signup from './components/user/signup/signup';
 
 // Switching scene type
 import FirebaseSwitch from './firebase_switch';
 
 const styles = StyleSheet.create({
   navBarDefault: {
-    backgroundColor: "#35A7FF",
+    backgroundColor: "rgba(0, 0, 0, 0)",
   }
 });
 
@@ -35,12 +36,13 @@ class TextbookSwap extends Component {
   render() {
     const rootSelector = () => this.state.loggedIn ? 'appScenes' : 'authScenes';
     return (
-      <Router>
+      <Router navigationBarStyle={styles.navBarDefault} titleStyle={{ color: "white" }} barButtonIconStyle={{tintColor:'rgb(255,255,255)'}}>
         <Scene key="root" tabs={true} component={FirebaseSwitch} selector={rootSelector}>
-          <Scene key="authScenes" hideNavBar={true}>
-            <Scene key="login" component={Login} initial={true}/>
+          <Scene key="authScenes" hideNavBar={false}>
+            <Scene key="login" component={Login} title="SCU TextbookSwap"/>
+            <Scene key="signup" component={Signup} hideNavBar={false} title="Create an account!" />
           </Scene>
-          <Scene key="appScenes" hideNavBar={false} navigationBarStyle={styles.navBarDefault} titleStyle={{ color: "white" }}>
+          <Scene key="appScenes" hideNavBar={false} >  
             <Scene key="home" component={Home} title="TextbookSwap" initial={true} />
           </Scene>
         </Scene>
