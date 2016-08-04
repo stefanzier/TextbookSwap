@@ -117,6 +117,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
+
+  // LOADING
+  loadingBG: {
+    backgroundColor: '#7790E6',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
+  loadingText: {
+    color: 'white',
+    fontSize: 20,
+    marginTop: 10
+  }
 }); 
 
 export default styles;

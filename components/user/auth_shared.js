@@ -175,8 +175,7 @@ export default class Login extends Component {
   }
   
   _logInUser() {
-    let email = this.state.email;
-    let password = this.state.password;
+    let { email, password } = this.state;
 
     auth.signInWithEmailAndPassword(email, password)
       .then(Actions.home)
