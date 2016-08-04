@@ -12,6 +12,7 @@
     "react-native-config": "0.0.7",
     "react-native-keyboard-aware-scroll-view": "^0.1.2",
     "react-native-router-flux": "^3.32.0",
+    "react-native-scrollable-tab-view": "^0.5.3",
     "react-redux": "^4.4.5"
   }
 }

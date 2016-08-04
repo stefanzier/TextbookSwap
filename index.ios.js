@@ -9,7 +9,7 @@ import firebaseApp from './firebase_setup';
 
 // Components
 import Login from './components/user/login/login';
-import Home from './components/user/home/home';
+import TabBar from './components/user/tab_bar/tab_bar';
 import Signup from './components/user/signup/signup';
 
 // Switching scene type
@@ -18,6 +18,12 @@ import FirebaseSwitch from './firebase_switch';
 const styles = StyleSheet.create({
   navBarDefault: {
     backgroundColor: "rgba(0, 0, 0, 0)",
+  },
+
+  homeNavigator: {
+    backgroundColor: "#7790E6",
+    borderBottomColor: 'transparent',
+    borderBottomWidth: 65
   }
 });
 
@@ -43,7 +49,7 @@ class TextbookSwap extends Component {
             <Scene key="signup" component={Signup} hideNavBar={false} title="Create an account!" />
           </Scene>
           <Scene key="appScenes" hideNavBar={false} >  
-            <Scene key="home" component={Home} title="TextbookSwap" initial={true} />
+            <Scene key="home" component={TabBar} navigationBarStyle={styles.homeNavigator} titleStyle={{color: "white"}} title="TextbookSwap" initial={true} />
           </Scene>
         </Scene>
       </Router>
