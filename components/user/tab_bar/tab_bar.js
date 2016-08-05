@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import ScrollableTabView, { ScrollableTabBar} from 'react-native-scrollable-tab-view';
-import Home from '../home/home';
 import {
 
 } from 'react-native';
+
+// Components
+import Home from '../home/home';
+import BookList from '../buy/book_list';
 
 export default class TabBar extends Component {
   render() {
@@ -17,7 +20,7 @@ export default class TabBar extends Component {
         tabBarInactiveTextColor="white"
         renderTabBar={() => <ScrollableTabBar />}
       >
-        <Home tabLabel="Buy" />
+        <BookList tabLabel="Buy" />
         <Home tabLabel="Swap" />
         <Home tabLabel="Sell" />
       </ScrollableTabView>

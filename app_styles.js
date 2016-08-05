@@ -130,7 +130,73 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     marginTop: 10
+  },
+
+  // BUY TAB
+  // BOOK LIST
+  bookListContainer: {
+    width: width,
+  },
+
+  // Book
+  bookContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    borderColor: '#50514F',
+    borderTopWidth: 0,
+    borderBottomWidth: 0.5,
+    borderLeftWidth: 0,
+    borderRightWidth: 0
+  },
+
+  bookInfo: {
+    flex: 1,
+    flexDirection: 'column',
+    marginTop: 5,
+    paddingLeft: 5,
+    marginTop: 2
+  },
+
+  bookThumbImageContainer: {
+    width: 45,
+    height: 53,
+    marginTop: 7,
+    marginLeft: 5,
+    marginBottom: 5
+  },
+
+  bookThumbImage: {
+  },
+
+  bookTitle: {
+    fontStyle: 'italic',
+    fontWeight: '600',
+    fontSize: 14
+  },
+
+  bookAuthor: {
+    marginTop: 2,
+    fontStyle: 'italic',
+    fontWeight: '300',
+    fontSize: 14,
+    color: '#8F8E94'
+  },
+
+  bookCategory: {
+    width: .5 * width,
+    color: '#FA2D65',
+    fontWeight: '400',
+  },
+
+  bookPrice: {
+    color: '#39A154',
+    fontWeight: '800',
+    width: .5 * width,
+    textAlign: 'center'
   }
+
+
 }); 
 
 export default styles;

@@ -57,7 +57,6 @@ export default class Home extends Component {
   }
   _signUserOut() {
     auth.signOut().then(() => {
-      console.log("User signed out"); 
       Actions.login
     }, (error) => {
       AlertIOS.alert(
