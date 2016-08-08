@@ -7,6 +7,7 @@ import {
 // Components
 import Home from '../home/home';
 import BookList from '../buy/book_list';
+import NewListing from '../new_listing/new_listing';
 
 export default class TabBar extends Component {
   render() {
@@ -22,7 +23,7 @@ export default class TabBar extends Component {
       >
         <BookList tabLabel="Buy" />
         <Home tabLabel="Swap" />
-        <Home tabLabel="Sell" />
+        <NewListing tabLabel="List a book" />
       </ScrollableTabView>
     );
   }

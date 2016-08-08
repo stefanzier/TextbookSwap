@@ -194,7 +194,131 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     width: .5 * width,
     textAlign: 'center'
+  },
+
+  // NEW LISTING
+  // COMMON FORM FIELDS
+  listingContainerDefault: {
+    borderColor: '#50514F',
+    borderTopWidth: 0,
+    borderRightWidth: 0,
+    borderBottomWidth: 0.5,
+    borderLeftWidth: 0,
+  },
+
+  listingSelectContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    paddingTop: 10,
+    paddingBottom: 5,
+    paddingLeft: 10,
+  },
+
+  listingSelectText: {
+    fontSize: 16,
+    color: '#50514F',
+    marginTop: 5,
+    marginRight: 25
+  },
+
+  listingSelectButtonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    marginLeft: 10
+  },
+
+  listingSelectButtonActive: {
+    backgroundColor: '#FA2D65',
+    paddingTop: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingBottom: 5,
+    width: 70,
+    height: 30
+  },
+
+  listingSelectButtonTextActive: {
+    color: 'white',
+    textAlign: 'center' 
+  },
+
+  listingSelectButtonInactive: {
+    backgroundColor: 'white',
+    borderColor: '#FA2D65',
+    borderWidth: 1,
+    paddingTop: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingBottom: 5,
+    width: 70,
+    height: 30
+  },
+
+  listingSelectButtonTextInactive: {
+    color: '#FA2D65',
+    textAlign: 'center'
+  },
+  
+  uploadPicContainer: {
+    paddingTop: 10,
+    height: 50,
+    alignItems: 'center'
+  },
+
+  uploadPicButton: {
+    backgroundColor: '#7790E6',
+    borderRadius: 20,
+    width: 0.6 * width,
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
+  uploadPicButtonText: {
+    color: 'white',
+    fontSize: 16 
+  },
+
+  listingTextInputContainer: {
+    flex: 1,
+    paddingLeft: 10,
+    paddingTop: 4,
+    paddingBottom: 8,
+    flexDirection: 'row'
+  },
+
+  listingTextInput: {
+    width: 0.8 * width,
+    height: 30
+  },
+
+  listingPicker: {
+    marginLeft: -5,
+  },
+
+  listItButtonContainer: {
+    width: width,
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 50
+  },
+
+  listItButton: {
+    borderRadius: 5,
+    backgroundColor: '#FA2D65',
+    width: 0.4 * width,
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 40
+  },
+
+  listItButtonText: {
+    color: 'white',
+    fontWeight: '600',
+    fontSize: 18
   }
+
 
 
 }); 
